@@ -1,14 +1,17 @@
 {
+  "type": "module",
   "name": "dimension-0",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "ts-node src/index.tsx"
+    "csv": "python3 sdk/add_url_column.py",
+    "start": "node --loader ts-node/esm src/index.mts"
   },
   "author": "TAKASE Kazuyuki (@Guvalif)",
   "license": "UNLICENSED",
   "dependencies": {
-    "@lit-labs/ssr": "^3.2.2"
+    "@lit-labs/ssr": "^3.2.2",
+    "csv-parser": "^3.0.0"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
