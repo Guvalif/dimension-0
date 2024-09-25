@@ -4,8 +4,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "csv": "python3 sdk/add_url_column.py",
-    "start": "node --loader ts-node/esm src/index.mts"
+    "start": "node --loader ts-node/esm src/index.mts sdk/stocks.csv"
   },
   "author": "TAKASE Kazuyuki (@Guvalif)",
   "license": "UNLICENSED",
