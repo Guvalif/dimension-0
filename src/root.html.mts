@@ -19,6 +19,11 @@ function NameAnchor(name: string, url: string) {
 }
 
 
+function Price(price: string) {
+  return Number(price).toLocaleString('ja-JP');
+}
+
+
 export function RootHtml(rows: Array<RowObject>) {
   return html`
     <!DOCTYPE html>
@@ -43,8 +48,12 @@ export function RootHtml(rows: Array<RowObject>) {
           <blockquote>
             <ul>
               <li><b>${UpdateDate()}</b> 時点での情報です</li>
-              <li>トレードなどをご希望の場合は、<a href="https://discord.com/channels/708764827522433074/710922077531537521" target="_blank">Discord</a> からご連絡ください</li>
               <li>レアリティにおける <b>SS</b> は銀箔版を意味します</li>
+              <li>購入をご希望の場合は、<a href="https://forms.gle/8CXNAGahFkHPWV8u9" target="_blank">Google フォーム</a> からご連絡ください</li>
+              <ul class="my-1">
+                <li>振込手数料や送料に関しては、ご負担のほどよろしくお願いいたします</li>
+              </ul>
+              <li>トレードをご希望の場合は、<a href="https://discord.com/channels/708764827522433074/710922077531537521" target="_blank">Discord</a> からご連絡ください</li>
             </ul>
           </blockquote>
         </div>
@@ -60,7 +69,7 @@ export function RootHtml(rows: Array<RowObject>) {
               <th>大陸</th>
               <th>余剰枚数</th>
               <th>カード名</th>
-              <th>メモ</th>
+              <th>価格 (円)</th>
             </tr>
           </thead>
           <tbody>
@@ -72,7 +81,7 @@ export function RootHtml(rows: Array<RowObject>) {
                 <td>${row.color}</td>
                 <td>${row.stock}</td>
                 <td>${NameAnchor(row.name, row.url)}</td>
-                <td>${row.memo && html`<span class="tag is-info">${row.memo}</span>`}</td>
+                <td>${Price(row.price)}</td>
               </tr>
             `)}
           </tbody>

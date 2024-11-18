@@ -9,7 +9,7 @@ type Columns =
   | 'color'
   | 'stock'
   | 'name'
-  | 'memo'
+  | 'price'
   | 'url';
 
 export type RowObject = Record<Columns, string>;

@@ -35,7 +35,7 @@ def get_latest_stocks(credentials):
 
     header, *body = worksheet.get_all_values()
 
-    yield [ 'century', 'rarity', 'number', 'color', 'stock', 'name', 'memo', 'url' ]
+    yield [ 'century', 'rarity', 'number', 'color', 'stock', 'name', 'price', 'url' ]
 
     for row in body:
         url = f"https://www.wikihouse.com/dim0wiki/index.php?{quote(row[5].encode('euc-jp'))}"
