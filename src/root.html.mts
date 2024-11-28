@@ -55,7 +55,7 @@ export function RootHtml(rows: Array<RowObject>) {
       <section class="section">
         <div class="content">
           <blockquote class="columns">
-            <ul class="column is-half">
+            <ul class="column is-half mb-0">
               <li><b>${UpdateDate()}</b> 時点での情報です</li>
               <li>レアリティにおける <b>SS</b> は銀箔版を意味します</li>
               <li>購入をご希望の場合は、<a href="https://forms.gle/8CXNAGahFkHPWV8u9" target="_blank">Google フォーム</a> からご連絡ください</li>
@@ -65,11 +65,11 @@ export function RootHtml(rows: Array<RowObject>) {
               <li>トレードをご希望の場合は、<a href="https://discord.com/channels/708764827522433074/710922077531537521" target="_blank">Discord</a> からご連絡ください</li>
             </ul>
             <div class="column is-half is-flex">
-              <div style="width: 50%;" class="is-flex is-justify-content-center is-align-items-center">
-                <span class="tag is-primary is-light is-size-6">合計<b id="total-price" class="mx-1">0</b>円</span>
+              <div style="width: 30%;" class="is-flex is-justify-content-center is-align-items-center">
+                <span class="tag is-primary is-light is-size-6 is-size-7-mobile">合計<b id="total-price" class="mx-1">0</b>円</span>
               </div>
-              <div style="width: 50%;" class="is-flex is-justify-content-center is-align-items-center">
-                <button id="create-button" class="button is-primary">出品リクエストを作成する</button>
+              <div style="width: 70%;" class="is-flex is-justify-content-center is-align-items-center">
+                <button id="create-button" class="button is-primary is-size-7-mobile">出品リクエストを作成</button>
               </div>
             </div>
           </blockquote>

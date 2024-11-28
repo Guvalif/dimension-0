@@ -10,13 +10,14 @@ function renderTotalPrice() {
       return acc + price * quantity;
     }, 0);
 
-  u('#total-price').text(totalPrice);
+  u('#total-price').text(totalPrice.toLocaleString('ja-JP'));
 }
 
 
 function renderListingRequest() {
   return Object
     .entries(listingRequest)
+    .filter(([_, quantity]) => quantity > 0)
     .map(([id, quantity]) => {
       const name = u(id).data('name');
       const century = u(id).data('century');
