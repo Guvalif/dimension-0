@@ -10,7 +10,8 @@
   "license": "UNLICENSED",
   "dependencies": {
     "@lit-labs/ssr": "^3.2.2",
-    "csv-parser": "^3.0.0"
+    "csv-parser": "^3.0.0",
+    "umbrellajs": "^3.3.3"
   },
   "devDependencies": {
     "ts-node": "^10.9.2"
