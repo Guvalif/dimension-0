@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node --loader ts-node/esm src/index.mts sdk/stocks.csv"
+    "start": "node --loader ts-node/esm src/index.mts sdk/stocks.csv",
+    "commit": "git commit --allow-empty -m \"Construct the stock information at $(date '+%Y/%m/%d')\""
   },
   "author": "TAKASE Kazuyuki (@Guvalif)",
   "license": "UNLICENSED",
