@@ -8,20 +8,17 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: read
+      contents: write
       id-token: write
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            sdk
 
       - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
 
-      - working-directory: sdk
+      - working-directory: src
         run: |
           ls -la
           pip install -r requirements.txt
@@ -32,7 +29,14 @@ jobs:
           workload_identity_provider: 'projects/737743752512/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
           service_account: sheet-downloader@dimension-0.iam.gserviceaccount.com
 
-      - working-directory: sdk
+      - working-directory: src
         run: |
-          python generate_stocks_csv_cd.py
-          cat stocks.csv
+          python index.py > ../docs/index.html
+          cat ../docs/index.html
+
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add docs/index.html
+          git commit -m "[CD] Construct the stock information at $(date '+%Y/%m/%d')"
+          git push origin HEAD:main
