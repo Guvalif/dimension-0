@@ -32,5 +32,7 @@ jobs:
           workload_identity_provider: 'projects/737743752512/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
           service_account: sheet-downloader@dimension-0.iam.gserviceaccount.com
 
-      - run: |
-          gcloud --version
+      - working-directory: sdk
+        run: |
+          python generate_stocks_csv_cd.py
+          cat stocks.csv
