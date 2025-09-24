@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
+    "allowImportingTsExtensions": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
@@ -12,9 +14,9 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "target",
     "resolveJsonModule": true,
     "rootDir": "src",
+    "skipLibCheck": true,
     "strict": true,
     "target": "ESNext"
   }

@@ -1,5 +1,5 @@
 import { html } from '@lit-labs/ssr';
-import { type RowObject } from './csv.mjs';
+import { type RowObject } from './csv.mts';
 
 
 function UpdateDate(): string {

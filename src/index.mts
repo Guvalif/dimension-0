@@ -1,8 +1,8 @@
 import { writeFile } from 'fs/promises';
 import { render } from '@lit-labs/ssr';
 
-import { readCsv } from './csv.mjs';
-import { RootHtml } from './root.html.mjs';
+import { readCsv } from './csv.mts';
+import { RootHtml } from './root.html.mts';
 
 
 const rendered = render(RootHtml(await readCsv(process.argv[2]!)));
