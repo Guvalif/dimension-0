@@ -79,7 +79,7 @@
             <td class="is-hidden-mobile">{{ stock.color }}</td>
             <td><a href="{{ stock.url }}" target="_blank">{{ stock.name }}</a></td>
             <td>{{ stock.condition }}</td>
-            <td>{{ "{:,}".format(stock.price|int) }}</td>
+            <td>{{ '{:,}'.format(stock.price|int) }}</td>
             <td>{{ stock.surplus }}</td>
             <td>
               <input
