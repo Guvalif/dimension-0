@@ -1,13 +1,7 @@
 Getting Started
 -------------------------------------------------------------------------------
 
-In **git-root** :
-
-```sh
-npm ci
-```
-
-In **sdk/** :
+In **src/** :
 
 ```sh
 python3 -m venv .
@@ -19,15 +13,5 @@ pip install -r requirements.txt
 How to Use
 -------------------------------------------------------------------------------
 
-In **sdk/** :
-
-```sh
-source ./bin/activate
-python3 generate_stocks_csv.py {{ KEYCHAIN_LABEL }}
-```
-
-In **git-root** :
-
-```sh
-npm run start
-```
+1. Open ['CD on Workflow Dispatch'](https://github.com/Guvalif/dimension-0/actions/workflows/cd-on-dispatch.yaml)
+2. Click `Run workflow`
