@@ -1,0 +1,36 @@
+name: CD on Workflow Dispatch
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delivery:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            sdk
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+
+      - working-directory: sdk
+        run: |
+          ls -la
+          pip install -r requirements.txt
+
+      - uses: 'google-github-actions/auth@v3'
+        with:
+          project_id: 'dimension-0'
+          workload_identity_provider: 'projects/737743752512/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-oidc'
+          service_account: sheet-downloader@dimension-0.iam.gserviceaccount.com
+
+      - run: |
+          gcloud --version
