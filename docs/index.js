@@ -22,8 +22,10 @@ function renderListingRequest() {
       const name = u(id).data('name');
       const century = u(id).data('century');
       const rarity = u(id).data('rarity');
+      const price = Number(u(id).data('price'));
+      const total = price * quantity;
 
-      return `${quantity}x${name}| ${century} | ${rarity}`;
+      return `- ${quantity}x${name}| ${century} | ${rarity} | ${total.toLocaleString('ja-JP')} 円`;
     })
     .join('\n');
 }
